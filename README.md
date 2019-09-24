@@ -7,4 +7,4 @@ https://datahack.analyticsvidhya.com/contest/practice-problem-urban-sound-classi
 
 - The file ```Plot_Audio_Data.py``` can be used to show a plot of the waveform for sounds in the training set. The plot below shows the waveform for an Idling Engine recording.
 
-![Idling Engine Plot] (Engine_Idling.png)
+![Idling Engine Plot](Engine_Idling.png)
