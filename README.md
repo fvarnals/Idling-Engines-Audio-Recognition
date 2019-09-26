@@ -1,4 +1,4 @@
-**This is an on-going project in which I aim to create a program which can accurately classify common urban sounds, and detect idling engines in the hope that it could be employed in tackling offending vehicles as part of the recent government initiatives to impose "no idling" zones.
+**This is an on-going project in which I aim to create a program which can accurately classify common urban sounds, and detect idling engines in the hope that it could be employed in tackling offending vehicles as part of the recent government initiatives to impose "no idling" zones.**
 
 # Audio Classifier for Idling Engine Sounds
 
