@@ -27,8 +27,8 @@ def parser(row):
     return pd.Series([feature, label])
 
 # create dataframe of features with noise label for each audio file in training set
-train = training_data[0:5200]
-val = training_data[5201:]
+train = training_data[0:4347]
+val = training_data[4347:]
 temp_train = train.apply(parser, axis=1)
 temp_train.columns = ['feature', 'label']
 temp_val = val.apply(parser, axis=1)
@@ -64,11 +64,7 @@ filter_size = 2
 # build model
 model = Sequential()
 
-model.add(Dense(256, input_shape=(40,)))
-model.add(Activation('relu'))
-model.add(Dropout(0.5))
-
-model.add(Dense(256))
+model.add(Dense(520, input_shape=(40,)))
 model.add(Activation('relu'))
 model.add(Dropout(0.5))
 
@@ -77,4 +73,4 @@ model.add(Activation('softmax'))
 
 model.compile(loss='categorical_crossentropy', metrics=['accuracy'], optimizer='adam')
 
-model.fit(X, y, batch_size=32, epochs=5, validation_data=(val_x, val_y))
+model.fit(X, y, batch_size=32, epochs=50, validation_data=(val_x, val_y))
