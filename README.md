@@ -29,3 +29,7 @@ https://datahack.analyticsvidhya.com/contest/practice-problem-urban-sound-classi
 Using a sequential model with 2 hidden layers, I was able to achieve a maximum accuracy of 51% in the cross-validation set.
 However, removing one of the hidden layers gave a much improved accuracy of 71% in the cross-validation set.
 Moving on from this, I decided to try using a convoluted neural network on a Mel Frequency Spectogram of the audio clips.
+
+By increasing the number of Epochs to 50, I managed to increase the accuracy to 88% in the cross-validation set.
+
+The next step is to try implementing a **Convolutional Neural Network** in order to hopefully increase the accuracy to ~100%

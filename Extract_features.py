@@ -35,8 +35,8 @@ def parser(row):
     return pd.Series([feature, label])
 
 # create dataframe of features with noise label for each audio file in training set
-train = training_data[0:5]
-val = training_data[5:9]
+train = training_data[0:4347]
+val = training_data[4347:]
 temp_train = train.apply(parser, axis=1)
 temp_train.columns = ['feature', 'label']
 temp_val = val.apply(parser, axis=1)
@@ -72,11 +72,7 @@ filter_size = 2
 # build model
 model = Sequential()
 
-model.add(Dense(256, input_shape=(40,)))
-model.add(Activation('relu'))
-model.add(Dropout(0.5))
-
-model.add(Dense(256))
+model.add(Dense(520, input_shape=(40,)))
 model.add(Activation('relu'))
 model.add(Dropout(0.5))
 
