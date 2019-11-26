@@ -4,9 +4,17 @@ import pandas as pd
 import librosa
 import glob
 from keras.utils import np_utils
+import tensorflow as tf
+with tf.device('/job:localhost/replica:0/task:0/device:XLA_GPU:0'):
+    a = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[2, 3], name='a')
+    b = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[3, 2], name='b')
+    c = tf.matmul(a, b)
+
+with tf.Session() as sess:
+    print (sess.run(c))
 
 # full path of directory where data is stored
-data_dir_path = '/Users/student/Projects/Engine_Idling/data'
+data_dir_path = '/home/fvarnals/Projects/Idling-Engines-Audio-Recognition/data'
 
 # load labelled trainig data from csv
 training_data = pd.read_csv("./data/train.csv")
@@ -27,8 +35,8 @@ def parser(row):
     return pd.Series([feature, label])
 
 # create dataframe of features with noise label for each audio file in training set
-train = training_data[0:5200]
-val = training_data[5201:]
+train = training_data[0:5]
+val = training_data[5:9]
 temp_train = train.apply(parser, axis=1)
 temp_train.columns = ['feature', 'label']
 temp_val = val.apply(parser, axis=1)
@@ -77,4 +85,4 @@ model.add(Activation('softmax'))
 
 model.compile(loss='categorical_crossentropy', metrics=['accuracy'], optimizer='adam')
 
-model.fit(X, y, batch_size=32, epochs=5, validation_data=(val_x, val_y))
+model.fit(X, y, batch_size=32, epochs=50, validation_data=(val_x, val_y))
