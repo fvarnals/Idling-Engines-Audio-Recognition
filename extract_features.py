@@ -28,17 +28,21 @@ def parser(row):
 
     # we extract mfcc feature from data
     mfccs = np.mean(librosa.feature.mfcc(y=X, sr=sample_rate, n_mfcc=40).T,axis=0)
-
+    
     feature = mfccs
     label = row.Class
 
     return pd.Series([feature, label])
 
 # create dataframe of features with noise label for each audio file in training set
-train = training_data[0:4347]
-val = training_data[4347:]
+train = training_data[0:1]
+val = training_data[2:3]
+
+# apply parser to every value of pandas series (here train)
+# axis=1 specifies columns
 temp_train = train.apply(parser, axis=1)
 temp_train.columns = ['feature', 'label']
+
 temp_val = val.apply(parser, axis=1)
 temp_val.columns = ['feature', 'label']
 
