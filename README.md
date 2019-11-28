@@ -64,3 +64,7 @@ The dataset contains the following distribution of data:
   'air_conditioner': 600
   'car_horn': 306
   'gun_shot': 230
+
+The plot below shows the performance of the algorithm on the training and validation sets respectively, for varying hyperparameters of batch size and number of epochs.
+
+![Training performance](training.png)
