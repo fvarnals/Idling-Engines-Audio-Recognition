@@ -41,29 +41,19 @@ The dataset contains the following distribution of data:
 - Sample size:
   5434
 
-- 10 different labels:
-  siren
-  street_music
-  drilling
-  dog_bark
-  children_playing
-  gun_shot
-  engine_idling
-  air_conditioner
-  jackhammer
-  car_horn
+- 10 different labels  
 
-- Number of samples per label (descending order):
-  'jackhammer': 668
-  'engine_idling': 624
-  'siren': 607
-  'street_music': 600
-  'drilling': 600
-  'dog_bark': 600
-  'children_playing': 600
-  'air_conditioner': 600
-  'car_horn': 306
-  'gun_shot': 230
+- Number of samples per label (descending order):  
+  'jackhammer': 668  
+  'engine_idling': 624  
+  'siren': 607  
+  'street_music': 600  
+  'drilling': 600  
+  'dog_bark': 600  
+  'children_playing': 600  
+  'air_conditioner': 600  
+  'car_horn': 306  
+  'gun_shot': 230  
 
 The plot below shows the performance of the algorithm on the training and validation sets respectively, for varying hyperparameters of batch size and number of epochs.
 
